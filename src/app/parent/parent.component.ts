@@ -13,9 +13,18 @@ import { NewLoggerService } from '../logger/new-logger.service';
   ],
 })
 export class ParentComponent implements OnInit {
-  constructor(private loggerService: LoggerService) {}
+  constructor(
+    private loggerService: LoggerService,
+    private newLoggerService: NewLoggerService
+  ) {}
 
   ngOnInit(): void {
     this.loggerService.log('parentComponent init');
+
+    console.log(
+      `ParentComponent : is same memory location : ${
+        this.loggerService === this.newLoggerService
+      }`
+    );
   }
 }
