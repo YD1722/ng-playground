@@ -13,8 +13,8 @@ import { APP_CONFIG, AppConfig } from './config.token';
       provide: LoggerService,
       useFactory: (injector: Injector) => {
         return injector.get(APP_CONFIG).newLoggerEnabled
-          ? new NewLoggerService()
-          : new LoggerService();
+          ? injector.get(NewLoggerService)
+          : injector.get(LoggerService);
       },
       deps: [Injector],
     },
