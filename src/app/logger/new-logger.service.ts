@@ -5,7 +5,7 @@ import { Logger } from './logger';
   providedIn: 'root',
 })
 export class NewLoggerService implements Logger {
-  prefix = 'new-logger';
+  prefix = 'newLogger';
 
   constructor() {}
 
