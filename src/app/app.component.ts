@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Injector } from '@angular/core';
 import { AppService } from './app.service';
 import { LoggerService } from './logger/logger.service';
 import { NewLoggerService } from './logger/new-logger.service';
@@ -11,12 +11,12 @@ import { APP_CONFIG, AppConfig } from './config.token';
   providers: [
     {
       provide: LoggerService,
-      useFactory: (config: AppConfig) => {
-        return config.newLoggerEnabled
+      useFactory: (injector: Injector) => {
+        return injector.get(APP_CONFIG).newLoggerEnabled
           ? new NewLoggerService()
           : new LoggerService();
       },
-      deps: [APP_CONFIG],
+      deps: [Injector],
     },
   ],
 })
