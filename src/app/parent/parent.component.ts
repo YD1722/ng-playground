@@ -1,4 +1,4 @@
-import { Component, OnInit, Self } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ParentService } from './parent.service';
 import { LoggerService } from '../logger/logger.service';
 import { NewLoggerService } from '../logger/new-logger.service';
@@ -21,10 +21,10 @@ export class ParentComponent implements OnInit {
   ngOnInit(): void {
     this.loggerService.log('parentComponent init');
 
-    console.log(
-      `ParentComponent : is same memory location : ${
-        this.loggerService === this.newLoggerService
-      }`
-    );
+    // console.log(
+    //   `ParentComponent : is same memory location : ${
+    //     this.loggerService === this.newLoggerService
+    //   }`
+    // );
   }
 }

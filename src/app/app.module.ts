@@ -10,6 +10,7 @@ import { GrandChildComponent } from './grand-child/grand-child.component';
 import { APP_REPORTER } from './report.token';
 import { BrowserReporterService } from './report/browser-reporter.service';
 import { UserReporterService } from './report/user-reporter.service';
+import { GrandGrandChildComponent } from './grand-grand-child/grand-grand-child.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { UserReporterService } from './report/user-reporter.service';
     ParentComponent,
     ChildComponent,
     GrandChildComponent,
+    GrandGrandChildComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [

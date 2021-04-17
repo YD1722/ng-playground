@@ -4,12 +4,10 @@ import { Logger } from './logger';
 @Injectable({
   providedIn: 'root',
 })
-export class LoggerService implements Logger {
-  constructor() {}
-
-  prefix = 'rootLogger';
+export class SpecialLoggerService implements Logger {
+  prefix = 'specialLogger';
 
   log(message: string): void {
-    console.log(`${this.prefix} :  ${message}`);
+    console.log(`${this.prefix}: ${message}`);
   }
 }

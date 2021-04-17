@@ -12,13 +12,10 @@ export class NewLoggerService implements Logger {
   constructor(@Inject(APP_REPORTER) private reporters: ReadonlyArray<Report>) {}
 
   log(message: string): void {
-    console.log(`_______NEW LOGGER____________`);
     console.log(`${this.prefix} :  ${message}`);
 
-    this.reporters.forEach((reporter) => {
-      reporter.report();
-    });
-    console.log(`_______NEW LOGGER - END____________`);
-
+    // this.reporters.forEach((reporter) => {
+    //   reporter.report();
+    // });
   }
 }

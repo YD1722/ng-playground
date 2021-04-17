@@ -1,8 +1,7 @@
 import { Component, Injector } from '@angular/core';
-import { AppService } from './app.service';
 import { LoggerService } from './logger/logger.service';
 import { NewLoggerService } from './logger/new-logger.service';
-import { APP_CONFIG, AppConfig } from './config.token';
+import { APP_CONFIG } from './config.token';
 
 @Component({
   selector: 'app-root',
@@ -27,10 +26,10 @@ export class AppComponent {
   ) {
     this.loggerService.log('AppComponent init');
 
-    console.log(
-      `AppComponent : is same memory location : ${
-        this.loggerService === this.newLoggerService
-      }`
-    );
+    // console.log(
+    //   `AppComponent : is same memory location : ${
+    //     this.loggerService === this.newLoggerService
+    //   }`
+    // );
   }
 }
