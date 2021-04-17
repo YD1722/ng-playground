@@ -9,7 +9,7 @@ import { NewLoggerService } from '../logger/new-logger.service';
   styleUrls: ['./parent.component.css'],
   providers: [
     ParentService,
-    { provide: LoggerService, useClass: NewLoggerService },
+    { provide: LoggerService, useExisting: NewLoggerService },
   ],
 })
 export class ParentComponent implements OnInit {
