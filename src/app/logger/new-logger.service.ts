@@ -1,8 +1,7 @@
-import { Inject, Injectable, Injector } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { Logger } from './logger';
-import { APP_CONFIG, AppConfig } from '../config.token';
 import { APP_REPORTER } from '../report.token';
-import { Report } from '../report';
+import { Report } from '../report/report';
 
 @Injectable({
   providedIn: 'root',
