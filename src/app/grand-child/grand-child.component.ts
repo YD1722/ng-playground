@@ -1,16 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { ParentService } from '../parent/parent.service';
 import { LoggerService } from '../logger/logger.service';
+import { LegacyLogger } from '../logger/legacy.logger';
 import { SpecialLoggerService } from '../logger/special-logger.service';
 
 @Component({
   selector: 'app-grand-child',
   templateUrl: './grand-child.component.html',
   styleUrls: ['./grand-child.component.css'],
-  viewProviders: [
-    { provide: LoggerService, useExisting: SpecialLoggerService },
-  ],
-  // providers: [{ provide: LoggerService, useExisting: SpecialLoggerService }],
+  viewProviders: [{ provide: LoggerService, useValue: LegacyLogger }],
+  // providers: [{ provide: LoggerService, useValue: LegacyLogger }],
 })
 export class GrandChildComponent implements OnInit {
   constructor(
